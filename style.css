@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Sometype+Mono:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -120,4 +122,114 @@ h2{
 
 .opacity-low {
     opacity: 0.5;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    padding: 32px
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    max-width: 100%;
+    height: 400px;
+    background: #ffffff;
+    border-radius: 3px;
+    margin: 0 auto;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+}
+
+.card::before,
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    background: #ffffff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
+    z-index: -1;
+    transition: .5s;
+}
+
+.card:hover::after {
+    transform: rotate(10deg);
+}
+
+.card:hover::before {
+    transform: rotate(20deg);
+}
+
+.card .imgBox {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: #101010;
+    z-index: 1;
+    transition: .5s;
+    overflow: hidden;
+}
+
+.card:hover .imgBox {
+    bottom: 75px;
+}
+#team {
+    background: #89CFF3;    
+    /* height: 80vh; */
+    height: au;
+}
+.card .imgBox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.card .details {
+    position: absolute;
+    /* left: 10px; */
+    right: 10px;
+    bottom: 10px;
+    width: 100%;
+    height: 55px;
+}
+
+.card .details h2 {
+    /* margin-top: 5px; */
+    /* padding: 0; */
+    font-weight: 900;
+    font-size: 30px !important;
+    color: #101010;
+    line-height: 1.15em;
+    visibility: hidden;
+    text-align: right;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.card:hover .details h2 {
+    visibility: visible;
+    opacity: 1;
+}
+
+.card .details h2 span {
+    font-weight: 400;
+    right: 0;
+    font-size: 15px;
+    color: #0dac4f;
+    position: absolute;
+    /* left: 0px; */
+
+    /* bottom: -28px; */
 }
